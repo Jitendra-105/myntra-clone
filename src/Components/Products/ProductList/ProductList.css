@@ -1,0 +1,238 @@
+.main-section {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 20px;
+	
+}
+.products-container-one {
+	display: none;
+}
+.product-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 0;
+}
+.background-container {
+	width: 13vw;
+	height: 35vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: 3rem;
+	position: relative;
+}
+.ratings-container {
+	display: flex;
+	background: rgba(245, 245, 245, 0.849);
+	position: absolute;
+	top: 14rem;
+	left: 0.7rem;
+	padding: .3rem;
+}
+.ratings-container div {
+	font-size: .6rem;
+	margin: 0 .2rem;
+}
+.ratings-container .rate {
+	font-size: .6rem;
+	margin: 0 .2rem;
+}
+.star{
+	color: green;
+	position: relative;
+	top: 0.1rem;
+	font-size: .7rem;
+	margin: 0 .1rem;
+}
+.ratings-container .views {
+	font-size: .6rem;
+	margin: 0 .2rem;
+
+}
+.product-card-container h6 {
+	font-size: 1rem;
+	margin: .4rem 0;
+}
+
+.product-card-container p {
+	font-size: 0.7rem;
+	font-weight: 500;
+	margin: .4rem 0;
+}
+
+.price-container strong {
+	font-size: .6rem;
+	margin: 0px 4px;
+
+}
+
+.price-container .discounted-price {
+	font-size: .6rem;
+	margin: 0px 4px;
+	color: lighgray;
+	color: gray;
+	text-decoration: line-through;
+}
+
+.price-container .offer {
+	font-size: .6rem;
+	color: orange;
+	margin: 0px 4px;
+
+}
+.line {
+	height: 1px;
+	width: 100%;
+	margin: 5rem 0;
+} 
+.line hr {
+	color: rgb(255, 251, 251);
+}
+
+@media screen and (max-width:811px){
+	.product-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 0;
+	}
+	.background-container {
+		background-image: url("http://localhost:3000/static/media/allenSolly.045f9e68607df19a311d.jpg");
+		width: 100% !important;
+		height: 22vh !important;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover !important;
+		margin-top: 1rem;
+		position: relative;
+	}
+
+	.products-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		width: 24%;
+	}
+	.product-card-container {
+		width: 100% !important;
+	}
+	.ratings-container {
+		display: flex;
+		background: rgba(245, 245, 245, 0.849);
+		position: absolute;
+		top: 8rem !important;
+		left: 0.3rem;
+		padding: .3rem;
+	}
+	.ratings-container .rate {
+		font-size: .5rem !important;
+		margin: 0 .2rem !important;
+	}
+	.star {
+		color: green;
+		position: relative;
+		top: 0.1rem;
+		font-size: .5rem !important;
+		margin: 0 .1rem;
+	}
+	.ratings-container .views {
+		font-size: .5rem !important;
+		margin: 0 .2rem;
+	}
+	.ratings-container div {
+		font-size: .5rem !important;
+		margin: 0 .1rem;
+	}
+	.product-card-container h6 {
+		font-size: .8rem !important;
+		margin: .4rem 0;
+	}
+	.product-card-container p {
+		font-size: 0.6rem !important;
+		
+	}
+	.price-container strong {
+		font-size: .5rem;
+	}
+	.price-container .discounted-price {
+		font-size: .5rem;
+	}
+	.price-container .offer {
+		font-size: .5rem;
+		color: orange;
+		margin: 0px 4px;
+	}
+}
+
+@media screen and (max-width:429px){
+	.product-list {
+		width: 100%;
+	}
+	/* .products-pair {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		gap: 0 !important;
+	} */
+	.products-container {
+		display: block !important;
+		width: 49%;
+	}
+	/* .products-container-one {
+		display: flex;
+		justify-content: center !important;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: 2px;
+	} */
+	.product-card-container {
+		width: 100% !important;
+	}
+	.background-container {
+		background-image: url("http://localhost:3000/static/media/allenSolly.045f9e68607df19a311d.jpg");
+		width: 100%;
+		height: 32vh !important;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin-top: 1rem;
+		position: relative;
+	}
+	.ratings-container {
+		display: flex;
+		background: rgba(245, 245, 245, 0.849);
+		position: absolute;
+		top: 11.5rem !important;
+		left: 0.5rem;
+		padding: .3rem;
+	}
+	.product-card-container h6 {
+		font-size: .8rem;
+	}
+	.product-card-container p {
+		font-size: 0.6rem;
+	}
+	.price-container strong {
+		font-size: .5rem;
+	}
+	.price-container .discounted-price {
+		font-size: .5rem;
+	}
+	.price-container .offer {
+		font-size: .5rem;
+	}
+
+	.product-card-container {
+		width: 100%;
+	}
+	}
+	

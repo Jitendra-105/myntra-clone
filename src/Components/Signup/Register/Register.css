@@ -1,0 +1,88 @@
+.body-container-1 {
+    background-color: rgb(255, 222, 227);
+}
+.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 26vw;
+    margin: auto;
+    height: 100vh; 
+}
+.banner-img {
+    width: 100%;
+    background-color: white; 
+}
+.banner-img img {
+    width: 100%;
+}
+.label {
+    display: inline-block;
+    width: 6vw;
+}
+.login-form {
+    width: 100%;
+	box-shadow: 2px 2px 6px lightgray;
+	height: 40vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+    background-color: white; 
+}
+.input-container-1 {
+    margin-bottom: 1rem;
+}.input-container-1 input {
+    padding: 4px;
+    outline: none;
+    border: 1px solid rgb(229, 221, 221);
+}
+.input-container-1 input:hover {
+    border-color: rgb(237, 41, 74);
+}
+.register-container .submit {
+	margin-bottom: 1rem;
+	background-color: rgb(241, 69, 98);
+	color: white;
+	border: none;
+	padding: 6px 8px;
+	display: inline;
+	width: 11.6vw;
+    border-radius: 4px;
+}
+.no {
+    margin-bottom: .1rem;
+}
+.other-btn {
+	border: none;
+	background: white;
+}
+.reg-color {
+    color: rgb(241, 69, 98);
+
+}
+
+@media screen and (max-width: 811px) {
+    .register-container {
+        width: 45vw;
+    }
+    .label {
+        width: 11vw;
+    }
+    .register-container .submit {
+        width: 22.6vw;
+    }
+}
+
+@media screen and (max-width:429px){
+    .register-container {
+        width: 91vw;
+    }
+    .label {
+        width: 23vw;
+    }
+    .register-container .submit {
+        width: 42.6vw;
+    }
+}

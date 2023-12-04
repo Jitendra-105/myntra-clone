@@ -1,0 +1,230 @@
+.body {
+	display: flex;
+	flex-direction: column;
+	margin-left: 1rem;
+	margin-top: 1rem;
+}
+.filter-section {
+	width: 20%;
+	position: sticky;
+	top: 3rem;
+	left: 0;
+	transform: translateY(-3rem);
+	z-index: 200;
+}
+.sub-filter-section {
+	border: 1px solid lightgray;
+	width: 100%;
+}
+.top-head {
+    margin-top: 1rem;
+	width: 100%;
+}
+.top-head span {
+	margin-left: 1rem;
+	margin-right: 6rem;
+	display: inline-block;
+	width: 100px;
+}
+.body input {
+	margin-right: 1vw;
+}
+.body label {
+    font-size: .8rem;
+    margin: .3rem 0;
+    font-weight: normal;
+    
+}
+.body label span{
+    font-size: .6rem;
+    margin-left: .1rem;    
+}
+.filter-icon {
+	border: 1px solid lightgray;	
+	border-radius: 50%;
+	background-color: rgb(254, 237, 237);
+	width: 23px;
+	height: 23px;
+	padding: 3px;
+	line-height: 2px;
+}
+.body span.colors {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin-right: .6rem;
+}
+.colors.gold {
+	background-color: gold;
+}
+.colors.yellow {
+	background-color: yellow;
+}
+.colors.pink {
+	background-color: pink;
+}
+.colors.red {
+	background-color: red;
+}
+.colors.green {
+	background-color: green;
+}
+.colors.blue {
+	background-color: blue;
+}
+.filter-icons {
+	display: none;
+}
+@media screen and (max-width:811px) {
+	.filter-section {
+		width: 20%;
+		position: sticky;
+		top: 11.5rem;
+		left: 0;
+		transform: translateY(-3rem);
+		z-index: 200;
+	}
+	.top-head {
+		margin-top: 1rem;
+		width: 100%;
+		font-size: .8rem;
+	}
+	.body {
+		display: flex;
+		flex-direction: column;
+		margin-left: .3rem;
+		margin-top: .6rem;
+	}
+	.top-head span {
+		margin-left: .3rem;
+		margin-right: 0rem;
+		display: inline-block;
+		width: 92px;
+	}
+	.body label span {
+		font-size: .5rem;
+		margin-left: .1rem;
+	}
+	.pricing {
+		font-size: .5rem !important;
+		margin: .3rem 0;
+		font-weight: normal;
+	}
+	.body input {
+		margin-right: .5vw;
+	}
+	.filter-icon {
+		border: 1px solid lightgray;
+		border-radius: 50%;
+		background-color: rgb(254, 237, 237);
+		width: 20px;
+		height: 20px;
+		padding: 3px;
+		line-height: 2px;
+	}
+	.body label {
+		font-size: .7rem;
+		margin: .3rem 0;
+		font-weight: normal;
+	}
+	.price-container strong {
+		margin: 0px 2px !important;
+		font-size: .5rem !important;
+	}
+	.price-container .discounted-price {
+		margin: 0px 2px !important;
+		font-size: .5rem !important;
+
+	}
+	.price-container .offer {
+	
+		margin: 0px 2px !important;
+		font-size: .5rem !important;
+
+	}
+} 
+
+@media (max-width:429px) and (max-height:927px) { 
+	.filter-section {
+		width: 26%;
+		position: sticky;
+		top: 3rem;
+		left: 0;
+		transform: translateY(-1rem);
+		z-index: 200;
+	}
+	.top-head span {
+		margin-left: .5rem;
+		margin-right: 0rem;
+		width: 100px;
+		font-size: .6rem;
+	}
+	.body {
+		display: flex;
+		flex-direction: column;
+		margin-left: .5rem;
+		margin-top: .5rem;
+		width: 100%;
+	}
+	.body label {
+		font-size: .5rem;
+		margin: .3rem 0;
+		font-weight: normal;
+	}
+	.body label span {
+		font-size: .4rem;
+		margin-left: 0rem;
+	}
+	label.pricing {
+		font-size: .4rem;
+	}.body input {
+		margin-right: 1px;
+	}
+	.price-width {
+		width: 7%;
+	}
+	.sub-filter-section {
+		position: relative;
+	}
+	.filter-icon {
+		border: 1px solid lightgray;
+		border-radius: 50%;
+		background-color: rgb(254, 237, 237);
+		width: 17px;
+		height: 17px;
+		padding: 3px;
+		line-height: 1px;
+		position: absolute;
+		right: .5rem;
+		top: 0.7rem;
+	}
+	.top-head {
+		margin-top: .4rem;
+		width: 100%;
+	}
+	.filter-section {
+		flex-direction: column;
+        position: absolute;
+        top: 6rem;
+        left: -100%;
+        height: auto;
+	}
+	.filter-section.showFilter {
+		left: 0;
+		z-index: 100;
+		background-color: white;
+		width: 40%;
+		height: auto;
+		top: 166px;
+	}
+	.filter-icons {
+		display: block !important;
+		color: rgb(241, 18, 18);
+		position: relative;
+		bottom: 13px;
+		left: 4px;
+		padding: 2px;
+		cursor: pointer;
+	}
+}

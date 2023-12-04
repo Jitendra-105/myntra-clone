@@ -1,0 +1,26 @@
+.banner-container {
+	width: 100%;
+	height: max-content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    margin-top: 7rem;
+    margin-bottom: 1.6rem;
+}
+
+.banner-container img {
+    width: 96%;
+    height: 23vh;
+    object-fit: fill;
+}
+
+@media screen and (max-width:429px){
+    .banner-container {
+        margin-top: 6rem;
+        margin-bottom: 1.3rem;
+    }
+    .banner-container img {
+        height: 9vh;
+    }
+} 
+    

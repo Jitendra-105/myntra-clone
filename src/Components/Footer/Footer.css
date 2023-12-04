@@ -1,0 +1,135 @@
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: rgb(245, 245, 245);
+    padding-top: 1rem;
+}
+
+.footer-container li {
+    list-style: none;
+}
+
+.footer-container a {
+    text-decoration: none;
+    color: rgb(95, 123, 153);
+
+}
+
+.imgSize {
+    width: 83px;
+    height: 34px;
+    object-fit: contain;
+    margin-top: 1.7rem;
+    margin: 1rem .4rem;
+}
+
+.forth-col div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.forth-col span {
+    font-size: 1rem;
+}
+
+.f-icon {
+    margin: 1rem .3rem;
+}
+
+.firstIcon {
+    font-size: 2rem;
+    margin-top: .6rem;
+    width: 4vw;
+}
+
+.secondIcon {
+    font-size: 2rem;
+    width: 4vw;
+
+}
+@media screen and (max-width:811px) {
+    .footer-container h4 {
+        font-size: .6rem;
+    }
+    .footer-container li a {
+        font-size: 12px;
+    }
+    .imgSize {
+        width: 64px;
+        height: 34px;
+        margin: .3rem .2rem;
+    }
+    .forth-col {
+        margin: 0px;
+        width: 25%;
+    }
+    .forth-col div span {
+        font-size: 11px;
+        padding-left: 3px;
+    }
+    .forth-col div strong {
+        font-size: 11px;
+        padding-left: 3px;
+    }
+    .firstIcon {
+        font-size: 1.4rem;
+        margin-top: .6rem;
+        width: 3vw;
+    }
+    .secondIcon {
+        font-size: 1.4rem;
+        margin-top: .6rem;
+        width: 3vw;
+    }
+ 
+}
+@media screen and (max-width:429px) {
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+
+    }
+    .first-col {
+        width: 50%;
+    }
+    .font {
+        font-size: 12px;
+        margin: 10px 0px;
+    }
+    .footer-container li a {
+        font-size: 10px;
+    }
+    .third-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 50%;
+    }
+    .imgSize {
+        width: 55px;
+        height: 34px;
+        object-fit: contain;
+        margin-top: 1.7rem;
+        margin: .2rem .1rem;
+    }
+    .third-col .firstChild h4 {
+            font-size: 8px;
+    }
+    .forth-col {
+        width: 50%;
+        margin: 0;
+    }
+    .forth-col div span {
+        font-size: 10px;
+        padding-left: 3px;
+    }
+    .forth-col div {
+        margin-bottom: 0rem;
+    }
+}
