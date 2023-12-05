@@ -9,14 +9,13 @@ const MainProductList = (props) => {
         <>
             {ProductListData
             .filter((value) => {
-                if(value.name == " ") {
-                    return value
+                if(value.name === "") {
+                    return value;
                 } else if (value.name.toLowerCase().includes(props.inputValue.toLowerCase())) {
-                    return value
+                    return value;
                 }
             })
    
-            
             .map((value, index) => {
                 return (
                     <ProductList
