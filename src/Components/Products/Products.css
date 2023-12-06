@@ -38,12 +38,25 @@ select {
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
+	width: 100%;
+	gap: 1rem;
+}
+.main-section {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 20px;
+	width: 100%;
 }
 @media screen and (max-width:811px) {
 	.main-section {
-			width: 80%;
+		display: flex;
+		justify-content: space-evenly !important;
 	}
-
+	.body-container {
+		gap: .6rem;
+	}
 	.logo-container {
 		position: relative;
 		right: 271px;
@@ -102,6 +115,9 @@ select {
 }
 
 @media (max-width:429px) and (max-height:927px) {
+	.main-filter-section {
+		width: 0% !important;
+	}
 	.top-details-container {
 		box-shadow: 2px 10px 4px 1px whitesmoke;
 		height: 14vh;
