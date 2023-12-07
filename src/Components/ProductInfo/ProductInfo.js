@@ -24,7 +24,7 @@ import {BiDislike} from "react-icons/bi"
 const ProductInfo = () => {
     return (
         <>
-            <Navbar />
+             <Navbar /> 
             <div className="main-info-container">
                 <div className="left-section">
                     <img src={img1} alt="" />
@@ -32,7 +32,7 @@ const ProductInfo = () => {
                     <img src={img3} alt="" />
                     <img src={img4} alt="" />
                 </div>
-                <div className="right-section">
+                 <div className="right-section">
                     <div className="product-details">
                         <h5 className="product-details-h5">Khusal K</h5>
                         <p className="product-details-p">Ethnic Motifs Embroidered Sequined Kurta with Palazzos & Dupatta</p>
@@ -450,9 +450,9 @@ const ProductInfo = () => {
                     </div>
 
                     </div>
-                </div>
-            </div>
-            <Similar/>
+                 </div>
+            </div> 
+            <Similar/> 
             <Footer />
         </>
     )

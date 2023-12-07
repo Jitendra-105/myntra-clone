@@ -97,7 +97,7 @@
 	display: flex;
 	background: rgba(245, 245, 245, 0.849);
 	position: absolute;
-	top: 14rem;
+	top: 13rem;
 	left: 0.7rem;
 	padding: .3rem;
 }
@@ -187,7 +187,10 @@
 	.product-list-container {
 		display: none;
 	}
-	
+	.right-section {
+		width: 95%;
+		margin-left: 1rem;
+	}
 	.products-pair {
 		display: flex;
 		justify-content: space-around;
@@ -212,7 +215,7 @@
 		display: flex;
 		background: rgba(245, 245, 245, 0.849);
 		position: absolute;
-		top: 7.6rem;
+		top: 7.6rem !important;
 		left: 0.5rem;
 		padding: .3rem;
 	}

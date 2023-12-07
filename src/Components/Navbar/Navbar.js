@@ -19,8 +19,8 @@ const Navbar = (props) => {
             <div className="logo-container">
                 <Link to="/" className='logo'>
                     <img src={logo} alt="" />
-                    <RxHamburgerMenu className='ham-menu' onClick={handleClick} />
                 </Link>
+                    <RxHamburgerMenu className='ham-menu' onClick={handleClick} />
 
             </div>
 

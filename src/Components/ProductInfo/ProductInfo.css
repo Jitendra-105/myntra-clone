@@ -486,7 +486,7 @@ color: rgb(255, 85, 114);
         font-size: .7rem;
     }
     .bold {
-        font-size: .8rem;
+        font-size: .7rem !important;
     }
     .sub-font {
         font-size: .7rem;

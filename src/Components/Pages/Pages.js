@@ -10,7 +10,7 @@ const Pages = () => {
                 <p>Page 1 of 6411</p>
             </div>
             <div className="center-part">
-                <div className="pages">
+                <div className="pages-wrapper">
                     <ul className="pages-count">
                         <li className="first-page">1</li>
                         <li>2</li>
