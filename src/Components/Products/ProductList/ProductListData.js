@@ -32,7 +32,7 @@ const ProductListData = [
     offer: "(70% OFF)"
 },
 {
-    url: "http://localhost:3000/ProductInfo",
+    url: "/ProductInfo",
     backgroundImagez: img2,
     ratings: "4.2k",
     line: "|",

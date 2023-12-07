@@ -26,21 +26,21 @@ const Data = [
         type: "Casual Wear",
         discount:" 50-70% OFF",
         now: "Shop Now",
-        url: "http://localhost:3000/Men"
+        url: "/Men"
     },
     {
         backgroundImges: western,
         type: "Western Wear",
         discount:" 40-80% OFF",
         now: "Shop Now",
-        url: "http://localhost:3000/Kids"
+        url: "/Kids"
     },
     {
         backgroundImges: kids,
         type: "Kids Wear",
         discount:" 60-90% OFF",
         now: "Shop Now",
-        url: "http://localhost:3000/Products"
+        url: "/Products"
 
     },
     {
@@ -48,7 +48,7 @@ const Data = [
         type: "Wedding Special",
         discount:" 50-80% OFF",
         now: "Shop Now",
-        url: "http://localhost:3000/Men"
+        url: "/Men"
 
     },
     {
@@ -56,7 +56,7 @@ const Data = [
         type: "Face Wash",
         discount:" 40-80% OFF",
         now: "Shop Now",
-        url: "http://localhost:3000/Kids"
+        url: "/Kids"
 
     },
     {
@@ -64,7 +64,7 @@ const Data = [
         type: "Branded Caps",
         discount:" 30-70% OFF",
         now: "Shop Now",
-        url: "http://localhost:3000/Products"
+        url: "/Products"
 
     },
     {
@@ -72,7 +72,7 @@ const Data = [
         type: "Variety Shoes",
         discount:" 20-40% OFF",
         now: "Shop Now",
-        url: "http://localhost:3000/Men"
+        url: "/Men"
 
     },
     {
@@ -80,7 +80,7 @@ const Data = [
         type: "Smart Phones",
         discount:" 20-40% OFF",
         now: "Shop Now",
-        url: "http://localhost:3000/Kids"
+        url: "/Kids"
 
     },
     {
@@ -88,7 +88,7 @@ const Data = [
         type: "Sports Shoes",
         discount:" 60-70% OFF",
         now: "Shop Now",
-        url: "http://localhost:3000/Products"
+        url: "/Products"
 
     },
     {
@@ -96,7 +96,7 @@ const Data = [
         type: "Trimmers",
         discount:" 30-80% OFF",
         now: "Shop Now",
-        url: "http://localhost:3000/Men"
+        url: "/Men"
 
     },
     {
@@ -104,7 +104,7 @@ const Data = [
         type: "Wrist Watches",
         discount:" 20-50% OFF",
         now: "Shop Now",
-        url: "http://localhost:3000/Kids"
+        url: "/Kids"
 
     },
  
