@@ -19,7 +19,7 @@ const Data = [
         type: "Ethnic Wear",
         discount:" 50-80% OFF",
         now: "Shop Now",
-        url: "http://localhost:3000/Products"
+        url: "/Products"
     },
     {
         backgroundImges: casual,
