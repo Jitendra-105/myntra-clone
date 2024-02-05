@@ -43,8 +43,7 @@
     text-decoration: none;
 }
 .signup {
-    /* background-color: rgb(241, 69, 98); */
-    background-color: rgb(80, 80, 247);
+    background-color: rgb(241, 69, 98);
     color: white;
     padding: 10px 13px;
     border: none;
