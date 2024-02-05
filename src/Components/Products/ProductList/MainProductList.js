@@ -6,35 +6,29 @@ import ProductListData from "./ProductListData"
 const MainProductList = (props) => {
 
     return (
-        <>
-            {ProductListData
+    <>
+        {ProductListData
             .filter((value) => {
-                if(value.name === "") {
-                    return value;
-                } else if (value.name.toLowerCase().includes(props.inputValue.toLowerCase())) {
-                    return value;
-                }
+              return value.name === "" || value.name.toLowerCase().includes(props.inputValue.toLowerCase());
             })
-   
             .map((value, index) => {
-                return (
-                    <ProductList
-
-                        key={index}
-                        url={value.url}
-                        backgroundImagez={value.backgroundImagez}
-                        ratings={value.ratings}
-                        line={value.line}
-                        views={value.views}
-                        name={value.name}
-                        details={value.details}
-                        price={value.price}
-                        discount={value.discount}
-                        offer={value.offer}
-                    />
-                )
+              return (
+                <ProductList
+                  key={index}
+                  url={value.url}
+                  backgroundImagez={value.backgroundImagez}
+                  ratings={value.ratings}
+                  line={value.line}
+                  views={value.views}
+                  name={value.name}
+                  details={value.details}
+                  price={value.price}
+                  discount={value.discount}
+                  offer={value.offer}
+                />
+              );
             })}
-        </>
+          </>
     );
 };
 
