@@ -25,25 +25,32 @@
     height: 40vh;
     display: flex;
     justify-content: center;
+    align-items: flex-end;
+  
+}
+.card-details {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    position: relative;
+    flex-direction: column;
+    gap: .6rem;
 }
 
 .logoContainer {
     border: 1px solid lightgray;
-    height: 5vh;
-    width: 10vw;
+    height: 20%;
+    width: 70%;
     background-color: whitesmoke;
     border-radius: 3.4px;
-    position: relative;
-    top: 3rem;
-    margin-left: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 .logoContainer img {
-    width: 5vw;
-    height: 3vh;
-    position: absolute;
+    width: 80%;
+    height: 80%;
     left: 40px;
     top: 4px;
     object-fit: contain;
@@ -58,17 +65,17 @@
     width: 4vw;
 }
 
-.dash {
-    position: absolute;
-    top: 14rem;
+ .dash {
+    /* position: absolute;
+    top: 14rem; */
     width: 30px;
     height: 2px;
     background-color: silver;
-}
+} 
 
 .details {
-	position: absolute;
-	top: 14.5rem;
+	/* position: absolute;
+	top: 14.5rem; */
 	color: white;
 	font-weight: 700;
 	font-size: 1.2rem;
@@ -78,16 +85,16 @@
 }
 
 .price {
-	position: absolute;
-	top: 16rem;
+	/* position: absolute;
+	top: 16rem; */
 	color: white;
 	font-weight: 700;
 	font-size: 1.2rem;
 	letter-spacing: .6px;
 	margin-left: 4px;
-}
+} 
 
-@media screen and (max-width:811px) {
+@media screen and (max-width:1281px) {
     .heading {
         width: 47vw;
     }
@@ -102,30 +109,18 @@
     }
 
     .logoContainer {
-        height: 3vh;
-        width: 22vw;
-        position: relative;
-        top: 6rem;
-    }
-
-    .logoContainer img {
-        width: 6vw;
-        height: 2.6vh;
-        position: absolute;
-        left: 69px;
-        top: 3px;
-        object-fit: contain;
-    }
-
-    .dash {
-        position: absolute;
-        top: 22rem;
-        width: 55px;
+        border: 1px solid lightgray;
+        height: 20%;
+        width: 70%;
+        background-color: whitesmoke;
+        border-radius: 3.4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .details {
-        position: absolute;
-        top: 23.4rem;
+       
         color: white;
         font-weight: 700;
         font-size: 1.2rem;
@@ -135,8 +130,6 @@
     }
 
     .price {
-        position: absolute;
-        top: 25rem;
         color: white;
         font-weight: 700;
         font-size: 1.2rem;
@@ -145,7 +138,7 @@
     }
 }
 
-@media (max-width:429px) {
+@media (max-width:541px) {
     .heading {
         font-size: 1rem;
         width: 50vw;
@@ -169,86 +162,20 @@
 
     }
 
-    .logoContainer {
-        height: 3vh;
-        width: 27vw;
-        position: relative;
-        top: 2rem;
-        margin-left: 4px;
-    }
-
-    .logoContainer img {
-        width: 12vw;
-        height: 2vh;
-        position: absolute;
-        left: 33px;
-        top: 3px;
-        object-fit: fill;
-    }
-
-    .dash {
-        position: absolute;
-        top: 10.1rem;
+    .card-details {
+        gap: .3rem;
     }
 
     .details {
-        position: absolute;
-        top: 10.8rem;
         font-weight: 600;
         font-size: 0.7rem;
         letter-spacing: 0px;
     }
 
     .price {
-        position: absolute;
-        top: 11.9rem;
         font-weight: 600;
         font-size: .7rem;
         letter-spacing: 0px;
     }
 
-}
-
-@media (max-width:376px) and (max-height:668px){
-    .background-img {
-        background-size: cover;
-        width: 100%;
-        height: 26vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
-
-    .heading {
-        font-size: 1rem;
-        width: 56vw;
-    }
-
-    .logoContainer {
-        position: relative;
-        top: 1.4rem;
-    }
-    .logoContainer img {
-        width: 6vw;
-        height: 2.6vh;
-        position: absolute;
-        left: 1.8rem;
-        top: .1rem;
-        object-fit: contain;
-    }
-    .dash {
-        position: absolute;
-        top: 8rem;
-        width: 36px;
-    }
-    .details {
-        position: absolute;
-        top: 8.9rem;
-        font-size: .6rem;
-    }
-    .price {
-        top: 9.8rem;
-        font-size: .6rem;
-    }
 }

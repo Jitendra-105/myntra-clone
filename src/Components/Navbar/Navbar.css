@@ -96,7 +96,7 @@
     align-items: center;
 }
 
-@media screen and (max-width:811px) {
+@media screen and (max-width:1281px) {
     .nav-container {
         flex-direction: column;
         align-items: center;
@@ -172,7 +172,7 @@
         left: 3rem;
     }
 }
-    @media screen and (max-width:429px) {
+    @media screen and (max-width:541px) {
         .logo-container {
             position: relative;
             right: 146px !important;

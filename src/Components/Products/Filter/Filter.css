@@ -135,7 +135,7 @@
 	}
 } 
 
-@media (max-width:429px) and (max-height:927px) { 
+@media (max-width:541px) { 
 	.main-filter-section {
 		width: 1rem !important;
 	}

@@ -10,21 +10,25 @@
 	margin-bottom: 0;
 }
 .background-container {
-	width: 13vw;
-	height: 35vh;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin-top: 3rem;
-	position: relative;
+    width: 13vw;
+    height: 35vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
+
 .ratings-container {
-	display: flex;
-	background: rgba(245, 245, 245, 0.849);
-	position: absolute;
-	top: 14rem;
-	left: 0.7rem;
-	padding: .3rem;
+    display: flex;
+    background: rgba(245, 245, 245, 0.849);
+    padding: .3rem;
+     justify-content: center;
+    align-items: center; 
+    height: 10%;
+	margin-bottom: 1rem;
 }
 .ratings-container div {
 	font-size: .6rem;
@@ -86,7 +90,7 @@
 	color: rgb(255, 251, 251);
 }
 
-@media screen and (max-width:811px){
+@media screen and (max-width:1025px){
 	.product-list {
 		display: flex;
 		flex-wrap: wrap;
@@ -97,13 +101,15 @@
 	}
 	.background-container {
 		background-image: url("http://localhost:3000/static/media/allenSolly.045f9e68607df19a311d.jpg");
-		width: 100% !important;
-		height: 22vh !important;
+		width: 100%;
+		height: 22vh;
 		background-position: center;
 		background-repeat: no-repeat;
-		background-size: cover !important;
+		background-size: cover;
 		margin-top: 1rem;
-		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
 	}
 
 	.products-container {
@@ -119,14 +125,11 @@
 	.ratings-container {
 		display: flex;
 		background: rgba(245, 245, 245, 0.849);
-		position: absolute;
-		top: 8rem !important;
-		left: 0.3rem;
 		padding: .3rem;
 	}
 	.ratings-container .rate {
-		font-size: .5rem !important;
-		margin: 0 .2rem !important;
+		font-size: .5rem;
+		margin: 0 .2rem;
 	}
 	.star {
 		color: green;
@@ -164,7 +167,7 @@
 	}
 }
 
-@media screen and (max-width:429px){
+@media screen and (max-width:541px){
 	.product-list {
 		width: 100%;
 	}
@@ -172,7 +175,7 @@
 		width: 40% !important;
 	}
 	.product-card-container {
-		width: 100% !important;
+		width: 100%;
 	}
 	.background-container {
 		background-image: url("http://localhost:3000/static/media/allenSolly.045f9e68607df19a311d.jpg");
@@ -182,14 +185,10 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		margin-top: 1rem;
-		position: relative;
 	}
 	.ratings-container {
 		display: flex;
 		background: rgba(245, 245, 245, 0.849);
-		position: absolute;
-		top: 11.5rem !important;
-		left: 0.5rem;
 		padding: .3rem;
 	}
 	.product-card-container h6 {
