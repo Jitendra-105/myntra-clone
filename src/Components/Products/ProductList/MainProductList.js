@@ -3,8 +3,8 @@ import './ProductList.css'
 import ProductList from "./ProductList"
 import ProductListData from "./ProductListData"
 
-const MainProductList = (props) => {
 
+const MainProductList = (props) => {
     return (
     <>
         {ProductListData
@@ -15,6 +15,7 @@ const MainProductList = (props) => {
               return (
                 <ProductList
                   key={index}
+                  id={value.id}
                   url={value.url}
                   backgroundImagez={value.backgroundImagez}
                   ratings={value.ratings}

@@ -11,7 +11,7 @@ const ProductList = (props) => {
             <div className="products-container">
 
                 <div className="product-card-container">
-                <Link to = {props.url}> <div className="background-container" style={{ backgroundImage: `url(${props.backgroundImagez})` }}>
+                <Link to = {`/ProductInfo/${props.id}`}> <div className="background-container" style={{ backgroundImage: `url(${props.backgroundImagez})` }}>
                         <div className="ratings-container">
                             <div className="rate">{props.ratings}<span><AiFillStar className="star" /></span></div>
                             <div>{props.line}</div>

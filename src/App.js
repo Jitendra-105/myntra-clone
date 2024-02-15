@@ -10,6 +10,7 @@ import Beauty from './Components/Beauty/Beauty'
 import Signup from './Components/Signup/Signup';
 import Products from "./Components/Products/Products"
 import ProductInfo from './Components/ProductInfo/ProductInfo';
+import WishList from './Components/wishList/WishList';
 function App() {
   return (
     <div>
@@ -22,7 +23,8 @@ function App() {
         <Route path='/Beauty' element= {<Beauty/>} />
         <Route path='/Signup' element= {<Signup/>} />
         <Route path='/Products' element = {<Products/>} />
-        <Route path='/ProductInfo' element = {<ProductInfo/>} />
+        <Route path='/ProductInfo/:id' element = {<ProductInfo/>} />
+        <Route path='/wishlist' element = {<WishList/>} />
       </Routes>
     </div>
   )

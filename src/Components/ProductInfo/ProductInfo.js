@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import "./ProductInfo.css"
 import { AiFillStar } from "react-icons/ai"
 import Navbar from "../Navbar/Navbar"
@@ -15,37 +15,70 @@ import { BsHandbagFill } from "react-icons/bs"
 import { AiOutlineHeart } from "react-icons/ai"
 import { CiDeliveryTruck } from "react-icons/ci"
 import { MdOutlineLocalOffer } from "react-icons/md"
-import {TbListDetails} from "react-icons/tb"
-import {FaStarHalfStroke} from "react-icons/fa6"
-import {FaStar} from "react-icons/fa"
-import {BiLike} from "react-icons/bi"
-import {BiDislike} from "react-icons/bi"
+import { TbListDetails } from "react-icons/tb"
+import { FaStarHalfStroke } from "react-icons/fa6"
+import { FaStar } from "react-icons/fa"
+import { BiLike } from "react-icons/bi"
+import { BiDislike } from "react-icons/bi"
+
+import { useDispatch, useSelector } from "react-redux"
+import ProductListData from "../Products/ProductList/ProductListData"
+import { productslist } from "../../app/slice"
+import { useParams} from "react-router-dom"
+
 
 const ProductInfo = () => {
+const dispatch = useDispatch()
+const {id} = useParams()
+
+const productLists = useSelector((state) => state.products.productList)
+const productDetails = productLists.find((product) => product.id.toString() === id); 
+
+ const handleAddtoWishlist = () => {}
+
+ useEffect(() => {
+    dispatch(productslist(ProductListData));
+  }, [dispatch]);
+
     return (
         <>
-             <Navbar /> 
+            <Navbar />
             <div className="main-info-container">
                 <div className="left-section">
+                    {productDetails && productDetails.one && productDetails.two && productDetails.three && productDetails.four ? 
+                    (
+                    <>
+                    <img src={productDetails.one} alt="" />
+                    <img src={productDetails.two} alt="" />
+                    <img src={productDetails.three} alt="" />
+                    <img src={productDetails.four} alt="" />
+                    </>
+                    ) :
+                    ( 
+                        <>
                     <img src={img1} alt="" />
                     <img src={img2} alt="" />
                     <img src={img3} alt="" />
                     <img src={img4} alt="" />
+                    </>
+                    )
+                }
+                    
                 </div>
-                 <div className="right-section">
+                <div className="right-section">
                     <div className="product-details">
-                        <h5 className="product-details-h5">Khusal K</h5>
-                        <p className="product-details-p">Ethnic Motifs Embroidered Sequined Kurta with Palazzos & Dupatta</p>
+                        <h5 className="product-details-h5">{productDetails && productDetails.name}</h5>
+                        <p className="product-details-p">{productDetails && productDetails.more}</p>
                     </div>
                     <div className="rating-container">
                         <div className="rate">4.2 <span><AiFillStar className="star" /></span></div>
                         <div>|</div>
-                        <div className="views">2.9k Ratings</div>
+                        <div className="views">{productDetails && productDetails.views} Ratings</div>
                     </div>
                     <hr className="rating-hr" />
                     <div className="product-pricing-section">
-                        <div className="info-price-container"><strong className="info-strong">RS.1634</strong><span className="info-discounted-section"> <span className="mrp">MRP</span><span className="info-discounted-price">549</span></span>
-                            <span className="info-offer">(70% OFF)</span></div>
+                        <div className="info-price-container"><strong className="info-strong">{productDetails && productDetails.price}</strong><span className="info-discounted-section"> <span className="mrp">MRP</span><span className="info-discounted-price">{productDetails && productDetails.discount}</span></span>
+                            <span className="info-offer">{productDetails && productDetails.offer}</span></div>
 
                     </div>
                     <div className="tax">inclusive of all taxes</div>
@@ -73,8 +106,8 @@ const ProductInfo = () => {
                         <div className="buttons cart">
                             <div className="bag-btn"><span className="icon-cont">< BsHandbagFill className="bag-icon" /></span><span className="bag">ADD TO BAG</span></div>
                         </div>
-                        <div className="buttons">
-                            <div className="wishlist-btn"><span className="icon-cont">< AiOutlineHeart className="wish-icon" /></span><span className="wishlist">Wishlist</span></div>
+                        <div className="buttons" onClick={handleAddtoWishlist}>
+                        <div className="wishlist-btn"><span className="icon-cont">< AiOutlineHeart className="wish-icon" /></span><span className="wishlist">Wishlist</span></div>
                         </div>
                     </div>
 
@@ -94,7 +127,7 @@ const ProductInfo = () => {
 
                     <div className="offer-container">
                         <div className="offer-head">
-                          <p> <span className="best-offer">BEST OFFERS</span><span>< MdOutlineLocalOffer/></span></p>
+                            <p> <span className="best-offer">BEST OFFERS</span><span>< MdOutlineLocalOffer /></span></p>
                         </div>
                         <div className="best-price-container">
 
@@ -174,13 +207,13 @@ const ProductInfo = () => {
                         </div>
                     </div>
 
-                    <hr className="rating-hr"/>
+                    <hr className="rating-hr" />
 
                     <div className="product-info">
 
                         <div className="detail-container">
-                            <h4>PRODUCT DETAILS <span><TbListDetails className="details-icon"/></span></h4>
-                         <p>Purple embroidered Kurta with Plazzos and Dupatta</p>
+                            <h4>PRODUCT DETAILS <span><TbListDetails className="details-icon" /></span></h4>
+                            <p>Purple embroidered Kurta with Plazzos and Dupatta</p>
                         </div>
 
                         <div className="pro-details">
@@ -208,17 +241,17 @@ const ProductInfo = () => {
                         <div className="pro-details">
                             <h5 className="pro-h5">Dupatta:</h5>
                             <ul className="infor">
-                            <li className="infor-list">Bandhani printed </li>
-                            <li className="infor-list">Tasselled border</li>
+                                <li className="infor-list">Bandhani printed </li>
+                                <li className="infor-list">Tasselled border</li>
 
-                               
+
                             </ul>
                         </div>
 
                         <div className="pro-details">
                             <h5 className="pro-h5">Size & Fit</h5>
                             <ul className="infor">
-                              
+
                                 <li className="infor-list">Dupatta: Length 2.10 meters, Width: 0.88 cm</li>
                                 <li className="infor-list">The model (height 5'8) is wearing a size S</li>
                             </ul>
@@ -242,52 +275,52 @@ const ProductInfo = () => {
                         <div className="sub-spec-container">
 
                             <div className="spec-details">
-                            <p className="small">Sleeve Length</p>
-                           <p className="big">Three-Quarter Sleeves</p>
-                           <hr className="spec-hr"/>
-                           </div>
+                                <p className="small">Sleeve Length</p>
+                                <p className="big">Three-Quarter Sleeves</p>
+                                <hr className="spec-hr" />
+                            </div>
 
-                           <div className="spec-details">
-                            <p className="small">Top Shape</p>
-                           <p className="big">Anarkali</p>
-                           <hr className="spec-hr"/>
-                           </div>
+                            <div className="spec-details">
+                                <p className="small">Top Shape</p>
+                                <p className="big">Anarkali</p>
+                                <hr className="spec-hr" />
+                            </div>
 
-                           <div className="spec-details">
-                            <p className="small">Top Type</p>
-                           <p className="big">Kurta</p>
-                           <hr className="spec-hr"/>
-                           </div>
+                            <div className="spec-details">
+                                <p className="small">Top Type</p>
+                                <p className="big">Kurta</p>
+                                <hr className="spec-hr" />
+                            </div>
 
-                           <div className="spec-details">
-                            <p className="small">Bottom Type</p>
-                           <p className="big">Palazzos</p>
-                           <hr className="spec-hr"/>
-                           </div>
+                            <div className="spec-details">
+                                <p className="small">Bottom Type</p>
+                                <p className="big">Palazzos</p>
+                                <hr className="spec-hr" />
+                            </div>
 
-                           <div className="spec-details">
-                            <p className="small">Dupatta</p>
-                           <p className="big">With Dupatta</p>
-                           <hr className="spec-hr"/>
-                           </div>
+                            <div className="spec-details">
+                                <p className="small">Dupatta</p>
+                                <p className="big">With Dupatta</p>
+                                <hr className="spec-hr" />
+                            </div>
 
-                           <div className="spec-details">
-                            <p className="small">Top Pattern</p>
-                           <p className="big">Embroidered</p>
-                           <hr className="spec-hr"/>
-                           </div>
+                            <div className="spec-details">
+                                <p className="small">Top Pattern</p>
+                                <p className="big">Embroidered</p>
+                                <hr className="spec-hr" />
+                            </div>
 
-                           <div className="spec-details">
-                            <p className="small">Top Design Styling</p>
-                           <p className="big">Pleated</p>
-                           <hr className="spec-hr"/>
-                           </div>
+                            <div className="spec-details">
+                                <p className="small">Top Design Styling</p>
+                                <p className="big">Pleated</p>
+                                <hr className="spec-hr" />
+                            </div>
 
-                           <div className="spec-details">
-                            <p className="small">Top Hemline</p>
-                           <p className="big">Flared</p>
-                           <hr className="spec-hr"/>
-                           </div>
+                            <div className="spec-details">
+                                <p className="small">Top Hemline</p>
+                                <p className="big">Flared</p>
+                                <hr className="spec-hr" />
+                            </div>
 
 
                         </div>
@@ -295,164 +328,164 @@ const ProductInfo = () => {
 
 
                     <div className="customer-ratings-container">
-                        <h4>RATINGS<span><FaStarHalfStroke/></span></h4>
+                        <h4>RATINGS<span><FaStarHalfStroke /></span></h4>
                         <div className="sub-rat-container">
                             <div className="left-rating-section">
-                            <div className="number">4.2 <span> <FaStar/></span></div>
-                            <div className="text">10.9k Verified Buyers</div>
+                                <div className="number">4.2 <span> <FaStar /></span></div>
+                                <div className="text">10.9k Verified Buyers</div>
                             </div>
-                            <hr className="cus-rat-hr"/>
+                            <hr className="cus-rat-hr" />
                             <div className="right-rating-section">
-                                    <div className="sub-right-container">
-                                        <div className="num">5</div>
-                                        <div className="star-rating-icon"><AiFillStar className="star-icons"/></div>
-                                        <div className="parent">
-                                            <div className="child"></div>
-                                        </div>
-                                        <div className="vote">6693</div>
+                                <div className="sub-right-container">
+                                    <div className="num">5</div>
+                                    <div className="star-rating-icon"><AiFillStar className="star-icons" /></div>
+                                    <div className="parent">
+                                        <div className="child"></div>
                                     </div>
+                                    <div className="vote">6693</div>
+                                </div>
 
-                                    <div className="sub-right-container">
-                                        <div className="num">4</div>
-                                        <div className="star-rating-icon"><AiFillStar className="star-icons"/></div>
-                                        <div className="parent">
-                                            <div className="child child2"></div>
-                                        </div>
-                                        <div className="vote">5324</div>
+                                <div className="sub-right-container">
+                                    <div className="num">4</div>
+                                    <div className="star-rating-icon"><AiFillStar className="star-icons" /></div>
+                                    <div className="parent">
+                                        <div className="child child2"></div>
                                     </div>
+                                    <div className="vote">5324</div>
+                                </div>
 
-                                    <div className="sub-right-container">
-                                        <div className="num">3</div>
-                                        <div className="star-rating-icon"><AiFillStar className="star-icons"/></div>
-                                        <div className="parent">
-                                            <div className="child child3"></div>
-                                        </div>
-                                        <div className="vote">4237</div>
+                                <div className="sub-right-container">
+                                    <div className="num">3</div>
+                                    <div className="star-rating-icon"><AiFillStar className="star-icons" /></div>
+                                    <div className="parent">
+                                        <div className="child child3"></div>
                                     </div>
+                                    <div className="vote">4237</div>
+                                </div>
 
-                                    <div className="sub-right-container">
-                                        <div className="num">2</div>
-                                        <div className="star-rating-icon"><AiFillStar className="star-icons"/></div>
-                                        <div className="parent">
-                                            <div className="child child4"></div>
-                                        </div>
-                                        <div className="vote">287</div>
+                                <div className="sub-right-container">
+                                    <div className="num">2</div>
+                                    <div className="star-rating-icon"><AiFillStar className="star-icons" /></div>
+                                    <div className="parent">
+                                        <div className="child child4"></div>
                                     </div>
+                                    <div className="vote">287</div>
+                                </div>
 
-                                    <div className="sub-right-container">
-                                        <div className="num">1</div>
-                                        <div className="star-rating-icon"><AiFillStar className="star-icons"/></div>
-                                        <div className="parent">
-                                            <div className="child child5"></div>
-                                        </div>
-                                        <div className="vote">156</div>
+                                <div className="sub-right-container">
+                                    <div className="num">1</div>
+                                    <div className="star-rating-icon"><AiFillStar className="star-icons" /></div>
+                                    <div className="parent">
+                                        <div className="child child5"></div>
                                     </div>
+                                    <div className="vote">156</div>
+                                </div>
                             </div>
 
                         </div>
                     </div>
-                    <hr className="rating-hr"/>
+                    <hr className="rating-hr" />
 
                     <div className="customer-review-container">
                         <h5>Customer review (983)</h5>
-                    <div className="review-section">
-                        <div className="review-text">
-                            <li className="text-li">5 <span><FaStar className="review-star"/></span></li>
-                            <li>good product. loved it - fits properly thank you myntra</li>
+                        <div className="review-section">
+                            <div className="review-text">
+                                <li className="text-li">5 <span><FaStar className="review-star" /></span></li>
+                                <li>good product. loved it - fits properly thank you myntra</li>
+                            </div>
+                            <div className="review-img-container">
+                                <img src={img1} alt="" className="review-img" />
+                                <img src={img2} alt="" className="review-img" />
+                            </div>
+                            <div className="other-sec">
+
+                                <div className="left-sec">
+                                    <li className="first-li">Sania Malhotra | </li>
+                                    <li>23 Sept 2023</li>
+                                </div>
+                                <div className="right-sec">
+                                    <li><BiLike /> <span>689</span></li>
+                                    <li><BiDislike /><span>0</span></li>
+                                </div>
+                            </div>
                         </div>
-                        <div className="review-img-container">
-                            <img src={img1} alt="" className="review-img"/>
-                            <img src={img2} alt="" className="review-img"/>
-                        </div>
-                        <div className="other-sec">
-                           
-                        <div className="left-sec">
-                        <li className="first-li">Sania Malhotra | </li>
-                            <li>23 Sept 2023</li>
-                        </div>
-                        <div className="right-sec">
-                        <li><BiLike/> <span>689</span></li>
-                            <li><BiDislike/><span>0</span></li>
-                        </div>
-                        </div>
-                    </div>
 
                     </div>
 
                     <div className="review-section">
                         <div className="review-text">
-                            <li className="text-li">5 <span><FaStar className="review-star"/></span></li>
+                            <li className="text-li">5 <span><FaStar className="review-star" /></span></li>
                             <li>good product. loved it - fits properly thank you myntra</li>
                         </div>
                         <div className="review-img-container">
-                            <img src={img1} alt="" className="review-img"/>
-                            <img src={img2} alt="" className="review-img"/>
-                            <img src={img3} alt="" className="review-img"/>
+                            <img src={img1} alt="" className="review-img" />
+                            <img src={img2} alt="" className="review-img" />
+                            <img src={img3} alt="" className="review-img" />
                         </div>
                         <div className="other-sec">
-                           
-                        <div className="left-sec">
-                        <li className="first-li">Sania Malhotra | </li>
-                            <li>23 Sept 2023</li>
-                        </div>
-                        <div className="right-sec">
-                        <li><BiLike/> <span>689</span></li>
-                            <li><BiDislike/><span>0</span></li>
-                        </div>
+
+                            <div className="left-sec">
+                                <li className="first-li">Sania Malhotra | </li>
+                                <li>23 Sept 2023</li>
+                            </div>
+                            <div className="right-sec">
+                                <li><BiLike /> <span>689</span></li>
+                                <li><BiDislike /><span>0</span></li>
+                            </div>
                         </div>
                     </div>
 
-                  
+
 
                     <div className="review-section">
                         <div className="review-text">
-                            <li className="text-li">5 <span><FaStar className="review-star"/></span></li>
+                            <li className="text-li">5 <span><FaStar className="review-star" /></span></li>
                             <li>good product. loved it - fits properly thank you myntra</li>
                         </div>
                         <div className="review-img-container">
-                            <img src={img1} alt="" className="review-img"/>
-                            <img src={img2} alt="" className="review-img"/>
-                            <img src={img3} alt="" className="review-img"/>
-                            <img src={img4} alt="" className="review-img"/>
+                            <img src={img1} alt="" className="review-img" />
+                            <img src={img2} alt="" className="review-img" />
+                            <img src={img3} alt="" className="review-img" />
+                            <img src={img4} alt="" className="review-img" />
                         </div>
                         <div className="other-sec">
-                           
-                        <div className="left-sec">
-                        <li className="first-li">Sania Malhotra | </li>
-                            <li>23 Sept 2023</li>
+
+                            <div className="left-sec">
+                                <li className="first-li">Sania Malhotra | </li>
+                                <li>23 Sept 2023</li>
+                            </div>
+                            <div className="right-sec">
+                                <li><BiLike /> <span>689</span></li>
+                                <li><BiDislike /><span>0</span></li>
+                            </div>
                         </div>
-                        <div className="right-sec">
-                        <li><BiLike/> <span>689</span></li>
-                            <li><BiDislike/><span>0</span></li>
-                        </div>
-                    </div>
 
                     </div>
 
                     <div className="review-section">
                         <div className="review-text">
-                            <li className="text-li">5 <span><FaStar className="review-star"/></span></li>
+                            <li className="text-li">5 <span><FaStar className="review-star" /></span></li>
                             <li>good product. loved it - fits properly thank you myntra</li>
                         </div>
                         <div className="review-img-container">
-                            <img src={img1} alt="" className="review-img"/>
+                            <img src={img1} alt="" className="review-img" />
                         </div>
                         <div className="other-sec">
-                           
-                        <div className="left-sec">
-                        <li className="first-li">Sania Malhotra | </li>
-                            <li>23 Sept 2023</li>
+
+                            <div className="left-sec">
+                                <li className="first-li">Sania Malhotra | </li>
+                                <li>23 Sept 2023</li>
+                            </div>
+                            <div className="right-sec">
+                                <li><BiLike /> <span>689</span></li>
+                                <li><BiDislike /><span>0</span></li>
+                            </div>
                         </div>
-                        <div className="right-sec">
-                        <li><BiLike/> <span>689</span></li>
-                            <li><BiDislike/><span>0</span></li>
-                        </div>
-                    </div>
 
                     </div>
-                 </div>
-            </div> 
-            <Similar/> 
+                </div>
+            </div>
+            <Similar />
             <Footer />
         </>
     )
