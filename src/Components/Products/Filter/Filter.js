@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import "./Filter.css"
 import { CiSearch } from "react-icons/ci"
 import { BiFilterAlt } from "react-icons/bi"
+import { MdOutlineFilterAltOff } from "react-icons/md";
 
 const Filter = () => {
     const [clickFilter, setClickFilter] = useState(false)
@@ -10,7 +11,7 @@ const Filter = () => {
         <div className="main-filter-section">
 
             <div className="filter-icon-container">
-                <BiFilterAlt className="filter-icons" onClick={handleFilter} />
+                {clickFilter ? <MdOutlineFilterAltOff className="filterClose-icon" onClick={handleFilter}/> : <BiFilterAlt className="filter-icons" onClick={handleFilter} />}
             </div>
 
             <div className={clickFilter ? "filter-section showFilter" : "filter-section"}>
@@ -18,7 +19,7 @@ const Filter = () => {
                 <div className="sub-filter-section">
                     <div className="top-head">
                         <span className="filter-span">CATEGORIES</span>
-                        <CiSearch className="filter-icon" />
+                        <CiSearch className="filter-icon" /> 
                     </div>
                     <div className="body">
                         <label htmlFor=""><input type="checkbox" name="Kurta" id="" /> Sarees <span>(5460)</span>

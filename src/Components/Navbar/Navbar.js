@@ -8,6 +8,7 @@ import { CgProfile } from 'react-icons/cg'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { BsBag } from 'react-icons/bs'
 import { RxHamburgerMenu } from 'react-icons/rx'
+import { IoClose } from "react-icons/io5";
 
 
 const Navbar = (props) => {
@@ -20,7 +21,8 @@ const Navbar = (props) => {
                 <Link to="/" className='logo'>
                     <img src={logo} alt="" />
                 </Link>
-                    <RxHamburgerMenu className='ham-menu' onClick={handleClick} />
+                {click ? <IoClose onClick={handleClick} className='closeMenu'/> : <RxHamburgerMenu className='ham-menu' onClick={handleClick} />}
+                    
 
             </div>
 

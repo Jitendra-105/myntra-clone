@@ -16,6 +16,9 @@
 .ham-menu {
     display: none;
 }
+.closeMenu {
+    display: none;
+}
 
 .logo img {
     width: 4rem;
@@ -120,6 +123,13 @@
         bottom: 41px;
         font-size: 20px;
     }
+    .closeMenu {
+        display: block;
+        position: relative;
+        left: 620px;
+        bottom: 41px;
+        font-size: 42px;
+    }
 
     .ham-list {
         flex-direction: column;
@@ -171,6 +181,9 @@
         position: relative;
         left: 3rem;
     }
+    .signup {      
+        width: 13vw;
+    }
 }
     @media screen and (max-width:541px) {
         .logo-container {
@@ -184,5 +197,15 @@
             left: 322px !important;
             bottom: 35px;
             font-size: 20px;
+        }
+        .closeMenu {
+            display: block;
+            position: relative;
+            left: 320px;
+            bottom: 41px;
+            font-size: 25px;
+        }
+        .signup {
+            width: 25vw;
         }
     }

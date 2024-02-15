@@ -71,6 +71,9 @@
 .filter-icons {
 	display: none;
 }
+.filter-icons {
+	display: none;
+}
 @media screen and (max-width:811px) {
 	.main-filter-section {
 		width: 25%;
@@ -113,6 +116,7 @@
 		padding: 3px;
 		line-height: 2px;
 	}
+	
 	.body label {
 		font-size: .7rem;
 		margin: .3rem 0;
@@ -209,9 +213,18 @@
 		background-color: white;
 		width: 40%;
 		height: auto;
-		top: 166px;
+		top: 204px;
 	}
 	.filter-icons {
+		display: block !important;
+		color: rgb(241, 18, 18);
+		position: relative;
+		bottom: 13px;
+		left: 4px;
+		padding: 2px;
+		cursor: pointer;
+	}
+	.filterClose-icon {
 		display: block !important;
 		color: rgb(241, 18, 18);
 		position: relative;
