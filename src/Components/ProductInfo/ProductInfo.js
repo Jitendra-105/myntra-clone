@@ -1,4 +1,4 @@
-import React,{useEffect} from "react"
+import React, { useEffect, useState } from "react"
 import "./ProductInfo.css"
 import { AiFillStar } from "react-icons/ai"
 import Navbar from "../Navbar/Navbar"
@@ -24,27 +24,42 @@ import { BiDislike } from "react-icons/bi"
 import { useDispatch, useSelector } from "react-redux"
 import ProductListData from "../Products/ProductList/ProductListData"
 import { productslist } from "../../app/slice"
-import { useParams} from "react-router-dom"
-import { Link } from "react-router-dom"
+import { useParams } from "react-router-dom"
+
+import { AddToWishlist } from "../../app/slice"
 
 
 const ProductInfo = () => {
-const dispatch = useDispatch()
-const {id} = useParams()
+    const dispatch = useDispatch()
+    const { id } = useParams()
 
-const productLists = useSelector((state) => state.products.productList)
-const productDetails = productLists.find((product) => product.id.toString() === id); 
+    const [click, setClick] = useState(false)
+    const [wishlist, setWishlist] = useState("Wishlist")
 
-useEffect(() => {
-    dispatch(productslist(ProductListData));
-  }, [dispatch]);
+    const productLists = useSelector((state) => state.products.productList)
+    const productDetails = productLists.find((product) => product.id.toString() === id);
+
+    const wishlistItems = useSelector((state) => state.addProducts.wishlist);
+
+    useEffect(() => {
+        dispatch(productslist(ProductListData));
+    }, [dispatch]);
 
 
-if (!productDetails) {
-    return <div>Loading...</div>;
-  }
+    if (!productDetails) {
+        return <div>Loading...</div>;
+    }
 
- const handleAddtoWishlist = () => {}
+    const handleAddtoWishlist = () => {
+        setClick(!click);
+    
+        if (!wishlistItems.some((item) => item.id === productDetails.id)) {
+          dispatch(AddToWishlist(productDetails));
+          setWishlist('Wishlisted');
+        } 
+        
+       
+      };
 
 
     return (
@@ -52,25 +67,25 @@ if (!productDetails) {
             <Navbar />
             <div className="main-info-container">
                 <div className="left-section">
-                    {productDetails && productDetails.one && productDetails.two && productDetails.three && productDetails.four ? 
-                    (
-                    <>
-                    <img src={productDetails.one} alt="" />
-                    <img src={productDetails.two} alt="" />
-                    <img src={productDetails.three} alt="" />
-                    <img src={productDetails.four} alt="" />
-                    </>
-                    ) :
-                    ( 
-                        <>
-                    <img src={img1} alt="" />
-                    <img src={img2} alt="" />
-                    <img src={img3} alt="" />
-                    <img src={img4} alt="" />
-                    </>
-                    )
-                }
-                    
+                    {productDetails && productDetails.one && productDetails.two && productDetails.three && productDetails.four ?
+                        (
+                            <>
+                                <img src={productDetails.one} alt="" />
+                                <img src={productDetails.two} alt="" />
+                                <img src={productDetails.three} alt="" />
+                                <img src={productDetails.four} alt="" />
+                            </>
+                        ) :
+                        (
+                            <>
+                                <img src={img1} alt="" />
+                                <img src={img2} alt="" />
+                                <img src={img3} alt="" />
+                                <img src={img4} alt="" />
+                            </>
+                        )
+                    }
+
                 </div>
                 <div className="right-section">
                     <div className="product-details">
@@ -113,11 +128,10 @@ if (!productDetails) {
                         <div className="buttons cart">
                             <div className="bag-btn"><span className="icon-cont">< BsHandbagFill className="bag-icon" /></span><span className="bag">ADD TO BAG</span></div>
                         </div>
-                        <Link to={`/wishlist/${productDetails.id}`}>
+                       
                         <div className="buttons" onClick={handleAddtoWishlist}>
-                        <div className="wishlist-btn"><span className="icon-cont">< AiOutlineHeart className="wish-icon" /></span><span className="wishlist">Wishlist</span></div>
+                            <div className="wishlist-btn" ><span className="icon-cont">< AiOutlineHeart className="wish-icon" /></span><span className="wishlist">{wishlist}</span></div>
                         </div>
-                        </Link>
                     </div>
 
                     <hr className="rating-hr" />

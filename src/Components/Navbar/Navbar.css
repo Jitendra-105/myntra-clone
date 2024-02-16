@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 5rem;
+    gap: 3rem;
     box-shadow: 2px 3px 2px 0px #ebebeb;
     height: 11vh;
     position: fixed;
@@ -12,7 +12,9 @@
     left: 0;
     background-color: white;
 }
-
+.logo-container {
+    margin-left: 1rem;
+}
 .ham-menu {
     display: none;
 }
@@ -34,7 +36,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     margin-right: 9rem;
 }
 
@@ -91,6 +93,10 @@
     align-items: center;
     justify-content: center;
     gap: 2rem;
+}
+.others-container a {
+    text-decoration: none;
+    color: black;
 }
 
 .sub-container {

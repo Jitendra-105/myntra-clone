@@ -1,18 +1,31 @@
 .wishlist-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    border: 1px solid lightgray;
+    gap: 2rem;
+    height: 100vh;
     margin-top: 2rem;
-    width: 90%;
-    margin: 2rem auto;
+    padding: 1rem;
 }
-.wishlist-left {
-    width: 20vw;
-    height: 22vh;
+.wishlist-item {
+    width: 15vw;
+    height: 40vh;
 }
-.wishlist-left img {
+.wishlist-img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    position: relative;
+}
+.wishlist-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.wishlist-close-icon {
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    top: .6rem;
+    right: .6rem;
+    cursor: pointer;
 }

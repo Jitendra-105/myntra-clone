@@ -61,9 +61,13 @@ const Navbar = (props) => {
                     <div className="sub-container">
                         <CgProfile /> <span>Profile</span>
                     </div>
+
+                    <Link to="/allwishlist">
                     <div className="sub-container">
                         <AiOutlineHeart /> <span>Wishlist</span>
                     </div>
+                    </Link>
+
                     <div className="sub-container">
                         <BsBag /> <span>Bag</span>
                     </div>
