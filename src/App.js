@@ -24,7 +24,7 @@ function App() {
         <Route path='/Signup' element= {<Signup/>} />
         <Route path='/Products' element = {<Products/>} />
         <Route path='/ProductInfo/:id' element = {<ProductInfo/>} />
-        <Route path='/wishlist' element = {<WishList/>} />
+        <Route path='/wishlist/:id' element = {<WishList/>} />
       </Routes>
     </div>
   )

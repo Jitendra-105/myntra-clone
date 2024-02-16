@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React,{useEffect} from "react"
 import "./ProductInfo.css"
 import { AiFillStar } from "react-icons/ai"
 import Navbar from "../Navbar/Navbar"
@@ -25,6 +25,7 @@ import { useDispatch, useSelector } from "react-redux"
 import ProductListData from "../Products/ProductList/ProductListData"
 import { productslist } from "../../app/slice"
 import { useParams} from "react-router-dom"
+import { Link } from "react-router-dom"
 
 
 const ProductInfo = () => {
@@ -34,11 +35,17 @@ const {id} = useParams()
 const productLists = useSelector((state) => state.products.productList)
 const productDetails = productLists.find((product) => product.id.toString() === id); 
 
- const handleAddtoWishlist = () => {}
-
- useEffect(() => {
+useEffect(() => {
     dispatch(productslist(ProductListData));
   }, [dispatch]);
+
+
+if (!productDetails) {
+    return <div>Loading...</div>;
+  }
+
+ const handleAddtoWishlist = () => {}
+
 
     return (
         <>
@@ -106,9 +113,11 @@ const productDetails = productLists.find((product) => product.id.toString() === 
                         <div className="buttons cart">
                             <div className="bag-btn"><span className="icon-cont">< BsHandbagFill className="bag-icon" /></span><span className="bag">ADD TO BAG</span></div>
                         </div>
+                        <Link to={`/wishlist/${productDetails.id}`}>
                         <div className="buttons" onClick={handleAddtoWishlist}>
                         <div className="wishlist-btn"><span className="icon-cont">< AiOutlineHeart className="wish-icon" /></span><span className="wishlist">Wishlist</span></div>
                         </div>
+                        </Link>
                     </div>
 
                     <hr className="rating-hr" />

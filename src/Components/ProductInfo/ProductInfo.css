@@ -132,6 +132,11 @@
     align-items: center;
     margin: 2rem 0rem;
 }
+.buttons-container a {
+    text-decoration: none;
+    color: black;
+}
+
 .buttons {
     border: 1px solid lightgray;
     padding: 1rem;
