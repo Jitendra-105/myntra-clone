@@ -11,6 +11,7 @@ import Signup from './Components/Signup/Signup';
 import Products from "./Components/Products/Products"
 import ProductInfo from './Components/ProductInfo/ProductInfo';
 import AllWishList from "./Components/wishList/AllWishList"
+
 function App() {
   return (
     <div>

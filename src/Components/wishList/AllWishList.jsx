@@ -14,6 +14,7 @@ const AllWishlist = () => {
   }
 
   return (
+    <>
     <div className="wishlist-container">
       {wishlist.map((product) => (
         <div key={product.id} className="wishlist-item">
@@ -31,6 +32,7 @@ const AllWishlist = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 

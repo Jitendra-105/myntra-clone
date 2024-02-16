@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React,{ useEffect, useState } from "react"
 import "./ProductInfo.css"
 import { AiFillStar } from "react-icons/ai"
 import Navbar from "../Navbar/Navbar"
@@ -38,8 +38,10 @@ const ProductInfo = () => {
 
     const productLists = useSelector((state) => state.products.productList)
     const productDetails = productLists.find((product) => product.id.toString() === id);
+    console.log(productDetails);
 
     const wishlistItems = useSelector((state) => state.addProducts.wishlist);
+    
 
     useEffect(() => {
         dispatch(productslist(ProductListData));
@@ -138,7 +140,7 @@ const ProductInfo = () => {
 
                     <div className="delivery-container">
                         <h4>Delivery Option <span><CiDeliveryTruck className="delivery-icon" /></span></h4>
-                        <input type="number" name="" placeholder="enter pincode" span />
+                        <input type="number" name="" placeholder="enter pincode"/>
                         <span className="check">Check</span>
                         <p className="delivery-p">Please enter PIN Code to check Delivery Time and Pay on Delivery Availability</p>
                         <div className="delivery-details">
