@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import "./ProductInfo.css"
 import { AiFillStar } from "react-icons/ai"
 import Navbar from "../Navbar/Navbar"
@@ -34,39 +34,59 @@ const ProductInfo = () => {
     const dispatch = useDispatch()
     const { id } = useParams()
 
-    const [click, setClick] = useState(false)
-    const [wishlist, setWishlist] = useState("Wishlist")
-
-    
-    useEffect(() => {
-        dispatch(productslist(ProductListData));
-        
-    }, [dispatch]);
-
     const productLists = useSelector((state) => state.products.productList)
     const productDetails = productLists.find((product) => product.id.toString() === id);
     const wishlistItems = useSelector((state) => state.addProducts.wishlist);
     const cartItems = useSelector((state) => state.addToCart.cartItems);
 
-    if (!productDetails) {
+    const [loading, setLoading] = useState(true);
+    const [click, setClick] = useState(false)
+    const [wishlist, setWishlist] = useState("Wishlist")
+
+
+    // useEffect(() => {
+    //     dispatch(productslist(ProductListData));
+
+    // }, [dispatch]);
+
+    useEffect(() => {
+        dispatch(productslist(ProductListData));
+        setLoading(false);
+      }, [dispatch]);
+
+
+    if (loading) {
         return <div>Loading...</div>;
     }
+
+    if (!productDetails) {
+        return <div>No product details found.</div>;
+    }
+
+    // Rest of the component code
+
+
+
+
+    // if (!productDetails) {
+    //     return <div>Loading...</div>;
+    // }
 
     const handleAddToCart = () => {
         setClick(!click);
         if (!cartItems.some((item) => item.id === productDetails.id)) {
-          dispatch(AddToCart(productDetails));
-        } 
+            dispatch(AddToCart(productDetails));
+        }
     }
 
     const handleAddtoWishlist = () => {
         setClick(!click);
-    
+
         if (!wishlistItems.some((item) => item.id === productDetails.id)) {
-          dispatch(AddToWishlist(productDetails));
-          setWishlist('Wishlisted');
-        } 
-      };
+            dispatch(AddToWishlist(productDetails));
+            setWishlist('Wishlisted');
+        }
+    };
 
 
     return (
@@ -135,7 +155,7 @@ const ProductInfo = () => {
                         <div className="buttons cart" onClick={handleAddToCart}>
                             <div className="bag-btn"><span className="icon-cont">< BsHandbagFill className="bag-icon" /></span><span className="bag">ADD TO BAG</span></div>
                         </div>
-                       
+
                         <div className="buttons" onClick={handleAddtoWishlist}>
                             <div className="wishlist-btn" ><span className="icon-cont">< AiOutlineHeart className="wish-icon" /></span><span className="wishlist">{wishlist}</span></div>
                         </div>
@@ -145,7 +165,7 @@ const ProductInfo = () => {
 
                     <div className="delivery-container">
                         <h4>Delivery Option <span><CiDeliveryTruck className="delivery-icon" /></span></h4>
-                        <input type="number" name="" placeholder="enter pincode"/>
+                        <input type="number" name="" placeholder="enter pincode" />
                         <span className="check">Check</span>
                         <p className="delivery-p">Please enter PIN Code to check Delivery Time and Pay on Delivery Availability</p>
                         <div className="delivery-details">
