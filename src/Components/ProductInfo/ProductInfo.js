@@ -36,17 +36,15 @@ const ProductInfo = () => {
     const [click, setClick] = useState(false)
     const [wishlist, setWishlist] = useState("Wishlist")
 
-    const productLists = useSelector((state) => state.products.productList)
-    const productDetails = productLists.find((product) => product.id.toString() === id);
-    console.log(productDetails);
-
-    const wishlistItems = useSelector((state) => state.addProducts.wishlist);
     
-
     useEffect(() => {
         dispatch(productslist(ProductListData));
+        
     }, [dispatch]);
 
+    const productLists = useSelector((state) => state.products.productList)
+    const productDetails = productLists.find((product) => product.id.toString() === id);
+    const wishlistItems = useSelector((state) => state.addProducts.wishlist);
 
     if (!productDetails) {
         return <div>Loading...</div>;
@@ -59,8 +57,6 @@ const ProductInfo = () => {
           dispatch(AddToWishlist(productDetails));
           setWishlist('Wishlisted');
         } 
-        
-       
       };
 
 
@@ -72,10 +68,10 @@ const ProductInfo = () => {
                     {productDetails && productDetails.one && productDetails.two && productDetails.three && productDetails.four ?
                         (
                             <>
-                                <img src={productDetails.one} alt="" />
-                                <img src={productDetails.two} alt="" />
-                                <img src={productDetails.three} alt="" />
-                                <img src={productDetails.four} alt="" />
+                                <img src={productDetails.one ?? img1} alt="" />
+                                <img src={productDetails.two ?? img2} alt="" />
+                                <img src={productDetails.three ?? img3} alt="" />
+                                <img src={productDetails.four ?? img4} alt="" />
                             </>
                         ) :
                         (
