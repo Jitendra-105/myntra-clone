@@ -68,9 +68,11 @@ const Navbar = (props) => {
                     </div>
                     </Link>
 
+                    <Link to="/cart">
                     <div className="sub-container">
                         <BsBag /> <span>Bag</span>
                     </div>
+                    </Link>
                 </div>
             </div>
 

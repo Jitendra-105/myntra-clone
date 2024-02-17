@@ -26,6 +26,7 @@ import ProductListData from "../Products/ProductList/ProductListData"
 import { productslist } from "../../app/slice"
 import { useParams } from "react-router-dom"
 
+import { AddToCart } from "../../app/slice"
 import { AddToWishlist } from "../../app/slice"
 
 
@@ -45,9 +46,17 @@ const ProductInfo = () => {
     const productLists = useSelector((state) => state.products.productList)
     const productDetails = productLists.find((product) => product.id.toString() === id);
     const wishlistItems = useSelector((state) => state.addProducts.wishlist);
+    const cartItems = useSelector((state) => state.addToCart.cartItems);
 
     if (!productDetails) {
         return <div>Loading...</div>;
+    }
+
+    const handleAddToCart = () => {
+        setClick(!click);
+        if (!cartItems.some((item) => item.id === productDetails.id)) {
+          dispatch(AddToCart(productDetails));
+        } 
     }
 
     const handleAddtoWishlist = () => {
@@ -123,7 +132,7 @@ const ProductInfo = () => {
                     </div>
 
                     <div className="buttons-container">
-                        <div className="buttons cart">
+                        <div className="buttons cart" onClick={handleAddToCart}>
                             <div className="bag-btn"><span className="icon-cont">< BsHandbagFill className="bag-icon" /></span><span className="bag">ADD TO BAG</span></div>
                         </div>
                        

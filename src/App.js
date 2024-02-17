@@ -11,6 +11,8 @@ import Signup from './Components/Signup/Signup';
 import Products from "./Components/Products/Products"
 import ProductInfo from './Components/ProductInfo/ProductInfo';
 import AllWishList from "./Components/wishList/AllWishList"
+import Cart from './Components/addToCart/Cart';
+import cartImg from "./assets/ethnic/img10.jpg"
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
         <Route path='/Products' element = {<Products/>} />
         <Route path='/ProductInfo/:id' element = {<ProductInfo/>} />
         <Route path='/allwishlist' element = {<AllWishList/>} />
+        <Route path='/cart' element = {<Cart/>} />
       </Routes>
     </div>
   )
