@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import "./cart.css"
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { useDispatch, useSelector } from 'react-redux';

@@ -12,7 +12,6 @@ import Products from "./Components/Products/Products"
 import ProductInfo from './Components/ProductInfo/ProductInfo';
 import AllWishList from "./Components/wishList/AllWishList"
 import Cart from './Components/addToCart/Cart';
-import cartImg from "./assets/ethnic/img10.jpg"
 
 function App() {
   return (
